@@ -1,0 +1,45 @@
+<md-dialog ng-style="{'min-height': '325px', 'width': '700px'}">
+
+    <md-toolbar style="background-color: #7B1FA2">
+        <div class="md-toolbar-tools">
+            <h2>{{ (estudiovigente.$$alreadyExists == true ? "Modificar Estudio" : "Agregar Estudio")}}</h2>
+            <span flex></span>
+            <md-button ng-click="closeDialog()" class="md-icon-button">
+                <md-icon aria-label="Close" class="material-icons">close</md-icon>
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div style="padding-top: 15px" layout="column" layout-padding>
+
+            <md-input-container class="md-icon-float md-icon-right md-block" flex>
+                <label>Nombre de Estudio</label>
+                <input required ng-model="estudiovigente.nombreDeEstudio">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-icon-right md-block">
+                <label>Precio</label>
+                <input required ng-model="estudiovigente.precio" type="number" step="0.01">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Descripción</label>
+                <textarea required ng-model="estudiovigente.descripcion" rows="3" md-maxlength="2000" md-select-on-focus></textarea>
+            </md-input-container>
+
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button Xclass="md-primary" ng-disabled="canSave()" ng-click="saveEstudio()"
+                   style="margin-right:10px;">
+            Guardar
+        </md-button>
+    </md-dialog-actions>
+
+
+</md-dialog>
