@@ -23,9 +23,7 @@
                 <md-button ng-disabled="true" xng-click="closeSidebar('left')" class="md-icon-button">
                     <md-icon aria-label="Close" class="material-icons">remove_red_eye</md-icon>
                 </md-button>
-<!--                <md-button class="md-icon-button logo">
-                    <img class="logo-image" src="/images/AVIOlogo4c-2015-xl.png">
-                </md-button>-->
+
                 <h1 flex class="md-toolbar-tools">Eye Tracking</h1>
                 <md-button ng-click="closeSidebar('left')" class="md-icon-button">
                     <md-icon aria-label="Close" class="material-icons">close</md-icon>
@@ -35,11 +33,6 @@
             </md-toolbar>
 
             <md-list>
-<!--                <md-list-item ng-class="{ 'main-sidenav-item-selected': isInState('home')}"
-                              class="secondary-button-padding" ng-click="goTo('home')" >
-                    <md-icon aria-label="Home" class="material-icons">home</md-icon>
-                    <span flex style="padding-top: 7px;">Home</span>
-                </md-list-item>-->
                 <md-list-item ng-if="userLogged.esAdministrativo"
                               ng-class="{ 'main-sidenav-item-selected': isInState('turnos.list')}" ng-click="goTo('turnos.list')"
                               class="secondary-button-padding">
